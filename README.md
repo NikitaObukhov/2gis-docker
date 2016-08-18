@@ -19,7 +19,6 @@
 * рубрикатор каталога сделать с произвольным уровнем вложенности рубрик друг в друга
 
 ## Документация
--------------
 
 [Ссылка на документацию](http://85.143.210.108:667/api/v1/doc)
 
@@ -39,3 +38,6 @@
     docker exec 2gis_web bin/console doctrine:fixtures:load
     docker exec 2gis_web chmod -R 777 var/cache var/logs var/sessions
 
+# Установка вручную
+
+[Для установки вручную](https://github.com/NikitaObukhov/2gis)
