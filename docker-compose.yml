@@ -1,0 +1,37 @@
+version: "2"
+services:
+  web:
+    image: tommylau/xdebug
+    container_name: 2gis_web
+    volumes:
+      - ./src:/var/www/html
+      - ./apache2.conf:/etc/apache2/apache2.conf
+    ports:
+      - "668:80"
+    networks:
+      - internal
+  mysql:
+    image: mysql:latest
+    container_name: 2gis_mysql
+    volumes:
+      - ./mysql:/var/lib/mysql
+    ports:
+      - "13307:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: 123
+    networks:
+      - internal
+
+  varnish:
+    image: million12/varnish
+    container_name: 2gis_varnish
+    volumes:
+      - ./varnish.vcl:/etc/varnish/default.vcl
+    ports:
+      - "80:80"
+    networks:
+      - internal
+
+networks:
+  internal:
+    driver: bridge
