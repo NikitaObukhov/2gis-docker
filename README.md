@@ -38,6 +38,7 @@
     docker exec 2gis_web bin/console doctrine:fixtures:load
     docker exec 2gis_web chmod -R 777 var/cache var/logs var/sessions
 
+Приложение будет доступно по адресу http://localhost/doc а также по адресу http://localhost:668/doc (минуя кэширующий прокси). Если 80-й порт занят другим процессом, вы можете изменить его в docker-compose.yml
 # Установка вручную
 
 [Для установки вручную](https://github.com/NikitaObukhov/2gis)
